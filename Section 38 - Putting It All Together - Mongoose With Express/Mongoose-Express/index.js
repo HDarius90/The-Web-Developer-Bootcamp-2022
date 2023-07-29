@@ -21,6 +21,8 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 app.use(methodOverride('_method'))
 
 
+
+
 const categories = ['fruit', 'vegetable', 'dairy'];
 
 app.get('/products', async (req, res) => {
