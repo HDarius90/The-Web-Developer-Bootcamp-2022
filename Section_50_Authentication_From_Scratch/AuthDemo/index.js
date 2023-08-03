@@ -43,6 +43,12 @@ app.post('/login', async (req, res) => {
     }
 })
 
+app.post('/logout', (req, res) => {
+    // req.session.user_id = null;
+    req.session.destroy();
+    res.redirect('/login');
+})
+
 app.post('/register', async (req, res) => {
     const { password, username } = req.body;
     const hash = await bcrypt.hash(password, 12);
@@ -56,9 +62,9 @@ app.post('/register', async (req, res) => {
 
 app.get('/secret', (req, res) => {
     if (!req.session.user_id) {
-        res.send('PLS LOGIN!');
+        return res.redirect('login');
     }
-    res.send('THIS IS A SECRET!YOU CANNOT SEE ME UNLESS YOU ARE LOGGED IN');
+    res.render('secret');
 })
 
 app.listen(3000, () => {
