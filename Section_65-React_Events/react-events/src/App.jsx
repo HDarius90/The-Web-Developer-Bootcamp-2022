@@ -7,7 +7,7 @@ import Clicker2 from './Clicker2'
 import Form from './Form'
 import Toggler from './Toggler'
 import ToggleCounter from './ToggleCounter'
-import ColorBoxes from './ColorBoxes'
+import ColorBoxGrid from './ColorBoxGrid'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,7 +37,7 @@ function App() {
       <Clicker message="HI!!!" buttonText="please Click Me"/> 
       <Clicker2 />
       <ToggleCounter />*/}
-      <ColorBoxes colors={colors} />
+      <ColorBoxGrid colors={colors} />
     </>
   )
 }

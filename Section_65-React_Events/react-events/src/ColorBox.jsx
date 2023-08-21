@@ -1,16 +1,19 @@
 import { useState } from "react";
 import './ColorBox.css'
 
+function getRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)]
+}
+
 export default function ColorBox({ colors }) {
-    const getRandIdx = () => { return Math.floor(Math.random() * colors.length)} 
-    const [color, setColor] = useState(colors[getRandIdx()]);
+    const [color, setColor] = useState(getRandomElement(colors));
     const style = {
         backgroundColor: color
     }
     const changeColor = () => {
-        setColor(colors[getRandIdx()]);
+        setColor(getRandomElement(colors));
     }
     return (
-        <div style={style} onClick={changeColor}></div>
+        <div className="ColorBox" style={style} onClick={changeColor}></div>
     )
 }
