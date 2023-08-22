@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function ShoppingListForm({addItem}) {
+export default function ShoppingListForm({ addItem }) {
     const [formData, setFormData] = useState({ product: "", qty: 0 });
     const changeHandler = (evt) => {
         setFormData((currentData) => {
@@ -13,6 +13,7 @@ export default function ShoppingListForm({addItem}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         addItem(formData)
+        setFormData({ product: "", qty: 0 })
     };
     return (
         <form>
