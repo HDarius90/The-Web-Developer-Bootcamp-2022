@@ -6,11 +6,13 @@ export default function UsernameForm() {
     }
     return (
         <div>
+            <label htmlFor="username">Enter Username</label>
             <input
                 type="text"
                 placeholder="username"
                 value={username}
-                onChange={updateUsername} />
+                onChange={updateUsername}
+                id="username" />
             <button>Submit</button>
         </div>
     )
